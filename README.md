@@ -11,12 +11,12 @@
 <br />
 
 ## Project Overview
-The Automated Penetration Testing Orchestrator is a decoupled cybersecurity platform designed to simulate a professional red team assessment workflow[cite: 5]. Unlike standard standalone execution tools, this system operates as a continuous programmatic pipeline where the structured output of one module dynamically serves as the automated input for the next[cite: 5]. It systematically discovers networked assets, identifies vulnerable services, safely validates exploits, and compiles findings into standardized reports[cite: 5].
+The Automated Penetration Testing Orchestrator is a decoupled cybersecurity platform designed to simulate a professional red team assessment workflow. Unlike standard standalone execution tools, this system operates as a continuous programmatic pipeline where the structured output of one module dynamically serves as the automated input for the next[cite: 5]. It systematically discovers networked assets, identifies vulnerable services, safely validates exploits, and compiles findings into standardized reports.
 
 ## Core Architecture & Engineering Concepts
-*   **Asynchronous Reconnaissance:** Leverages Python's `asyncio` and Nmap integration to perform high-speed, non-blocking service discovery and banner grabbing without exhausting system resources[cite: 5, 6].
-*   **Vulnerability Correlation via CPE:** Programmatically maps raw version strings into strict Common Platform Enumeration (CPE) formats to ensure highly accurate querying against the NIST NVD REST API 2.0 for real-time CVE identifiers and CVSS risk scores[cite: 5, 6].
-*   **Safe Execution Engine:** Prioritizes enterprise safety by utilizing non-destructive proof-of-concept (PoC) checks over destructive payloads, preventing accidental Denial of Service (DoS) while securely confirming exploitability[cite: 5, 6].
+*   **Asynchronous Reconnaissance:** Leverages Python's `asyncio` and Nmap integration to perform high-speed, non-blocking service discovery and banner grabbing without exhausting system resources.
+*   **Vulnerability Correlation via CPE:** Programmatically maps raw version strings into strict Common Platform Enumeration (CPE) formats to ensure highly accurate querying against the NIST NVD REST API 2.0 for real-time CVE identifiers and CVSS risk scores.
+*   **Safe Execution Engine:** Prioritizes enterprise safety by utilizing non-destructive proof-of-concept (PoC) checks over destructive payloads, preventing accidental Denial of Service (DoS) while securely confirming exploitability.
 
 ## The 5-Phase Pipeline
 | Phase | Status | Technical Implementation |
