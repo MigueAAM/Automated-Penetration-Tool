@@ -11,7 +11,7 @@
 <br />
 
 ## Project Overview
-The Automated Penetration Testing Orchestrator is a decoupled cybersecurity platform designed to simulate a professional red team assessment workflow. Unlike standard standalone execution tools, this system operates as a continuous programmatic pipeline where the structured output of one module dynamically serves as the automated input for the next[cite: 5]. It systematically discovers networked assets, identifies vulnerable services, safely validates exploits, and compiles findings into standardized reports.
+The Automated Penetration Testing Orchestrator is a decoupled cybersecurity platform designed to simulate a professional red team assessment workflow. Unlike standard standalone execution tools, this system operates as a continuous programmatic pipeline where the structured output of one module dynamically serves as the automated input for the next. It systematically discovers networked assets, identifies vulnerable services, safely validates exploits, and compiles findings into standardized reports.
 
 ## Core Architecture & Engineering Concepts
 *   **Asynchronous Reconnaissance:** Leverages Python's `asyncio` and Nmap integration to perform high-speed, non-blocking service discovery and banner grabbing without exhausting system resources.
