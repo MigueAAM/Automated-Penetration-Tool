@@ -22,7 +22,7 @@ The Automated Penetration Testing Orchestrator is a decoupled cybersecurity plat
 | Phase | Status | Technical Implementation |
 | :--- | :--- | :--- |
 | **1. Reconnaissance** | 🟢 Completed | Enforces strict Rules of Engagement (RoE) boundaries and extracts machine-readable service fingerprints using async network probes and Nmap. |
-| **2. Correlation** | 🟡 Active | Ingests JSON scan data and retrieves active CVE identifiers via the NVD database API using `virtualMatchString`. |
+| **2. Correlation** | 🟡 Active - Testing | Ingests JSON scan data and retrieves active CVE identifiers via the NVD database API using `virtualMatchString`. |
 | **3. Validation** | ⚪ Pending | A dynamic plugin registry that parses CVEs and routes them to safe Python PoC scripts for non-destructive verification against Docker targets. |
 | **4. Reporting** | ⚪ Pending | Translates aggregated JSON data into NIST/CIS compliant executive summaries and technical remediation steps. |
 | **5. Dashboard** | ⚪ Pending | A React/Next.js frontend interface bridging the Python orchestrator for live progress tracking and risk visualization. |
