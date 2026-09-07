@@ -33,6 +33,8 @@ auto_pentest_platform/
 ├── phase1_recon/           # Scope validation & Nmap async scanning
 ├── phase2_correlation/     # NVD API CVE formatting
 ├── phase3_validation/      # Safe PoC execution engine
+├── phase4_reporting/       # Report engine using templates
+├── phase5_dashboard/       # Optional
 ├── data/                   # Dynamic artifact JSON storage
 ├── config.py               # Global path resolution
 └── run_pipeline.py         # Master CLI Orchestrator
