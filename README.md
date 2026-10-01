@@ -31,10 +31,31 @@ Heaven's Door is an Automated Penetration Testing Orchestrator is a decoupled cy
 ```text
 auto_pentest_platform/
 ├── phase1_recon/           # Scope validation & Nmap async scanning
+|    ├── main.py
+|    ├── models.py
+|    ├── scanner.py
+|    ├── scope_guard.py
 ├── phase2_correlation/     # NVD API CVE formatting
+|    ├── Correlator.py
 ├── phase3_validation/      # Safe PoC execution engine
+|    ├── CVE_Scripts/
+|    |    ├── base.py
+|    |    ├── cve_2021_42013.py
+|    |    ├── cve_2021_41773.py
+|    |    ├── cve_2023_23934.py
+|    ├── engine.py
+|    ├── loader.py
+|    ├── main.py
+|    ├── poc_loader.py
 ├── phase4_reporting/       # Report engine using templates
-├── phase5_dashboard/       # Optional
+|    ├── Templates/
+├── phase5_dashboard/       # Interactive Dashboard
+|    ├── Backend/
+|    ├── Frontend/
 ├── data/                   # Dynamic artifact JSON storage
+|    ├── Final_Reports/
+|    ├── Scanner_Results/
+|    ├── Validation_Results/
+|    ├── Vulnerability_Results/
 ├── config.py               # Global path resolution
 └── run_pipeline.py         # Master CLI Orchestrator
