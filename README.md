@@ -31,7 +31,7 @@ docker compose up --build -d
 ## 2. Master Orchestrator Execution
 To trigger the entire sequential pipeline (Phases 1 through 4) automatically:
 ```bash
-python run_pipeline.py --target 127.0.0.1
+python run_pipeline --target 127.0.0.1
 ```
 
 # Modular Phase Execution (CLI)
