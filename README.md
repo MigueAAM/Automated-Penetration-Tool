@@ -23,8 +23,8 @@ Heaven's Door is an Automated Penetration Testing Orchestrator is a decoupled cy
 | :--- | :--- | :--- |
 | **1. Reconnaissance** | 🟢 Completed | Enforces strict Rules of Engagement (RoE) boundaries and extracts machine-readable service fingerprints using async network probes and Nmap. |
 | **2. Correlation** | 🟢 Completed | Ingests JSON scan data and retrieves active CVE identifiers via the NVD database API using `virtualMatchString`. |
-| **3. Validation** | 🟡 Active - Development | A dynamic plugin registry that parses CVEs and routes them to safe Python PoC scripts for non-destructive verification against Docker targets. |
-| **4. Reporting** | ⚪ Pending | Translates aggregated JSON data into NIST/CIS compliant executive summaries and technical remediation steps. |
+| **3. Validation** | 🟢 Completed | A dynamic plugin registry that parses CVEs and routes them to safe Python PoC scripts for non-destructive verification against Docker targets. |
+| **4. Reporting** | 🟡 Active - Development | Translates aggregated JSON data into NIST/CIS compliant executive summaries and technical remediation steps. |
 | **5. Dashboard** | ⚪ Pending | A React/Next.js frontend interface bridging the Python orchestrator for live progress tracking and risk visualization. |
 
 ## Directory Structure
