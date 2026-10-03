@@ -1,0 +1,13 @@
+# Phase 1: Reconnaissance
+python-nmap==0.7.1  # Wraps the Nmap engine for async port discovery and service extraction
+
+# Phase 2 & Phase 3: Vulnerability Correlation and Safe Validation
+requests==2.31.0  # Queries the NIST NVD REST API 2.0 and executes HTTP PoC payloads
+
+# Phase 4: Reporting
+Jinja2==3.1.2  # Renders the HTML and Markdown deliverable templates
+
+# Phase 5: Web Dashboard & API Gateway
+fastapi==0.103.1  # Serves pipeline JSON artifacts and real-time telemetry to the React frontend
+uvicorn==0.23.2  # ASGI server for FastAPI
+pdfkit==1.0.0  # Converts Phase 4 HTML reports into downloadable PDFs
