@@ -18,6 +18,47 @@ Heaven's Door is an Automated Penetration Testing Orchestrator is a decoupled cy
 *   **Vulnerability Correlation via CPE:** Programmatically maps raw version strings into strict Common Platform Enumeration (CPE) formats to ensure highly accurate querying against the NIST NVD REST API 2.0 for real-time CVE identifiers and CVSS risk scores.
 *   **Safe Execution Engine:** Prioritizes enterprise safety by utilizing non-destructive proof-of-concept (PoC) checks over destructive payloads, preventing accidental Denial of Service (DoS) while securely confirming exploitability.
 
+# Execution & Deployment Commands:
+
+## 1. Test Environment Initialization
+To safely validate the pipeline without exposing production networks, initialize the local target lab bound to the loopback interface (`127.0.0.1`)
+
+```bash
+cd test_target
+docker compose up --build -d
+```
+
+## 2. Master Orchestrator Execution
+```bash
+python run_pipeline.py --target 127.0.0.1
+```
+
+# Modular Phase Execution (CLI)
+The pipeline features a decoupled architecture where each phase can be executed independently, reading from and writing to the central `data/` directory.
+## Phase 1 - Reconnaissance & Scope Guard: 
+Discovers open ports and extracts service banners using Nmap, validating targets against authorized CIDRs.
+```bash
+py -3 -m phase1_recon.main --target 127.0.0.1
+```
+
+## Phase 2 - Vulnerability Correlation:
+Translates Phase 1 findings into CPE 2.3 syntax and queries the NIST NVD API. Custom inputs and outputs can be specified using `--file` and `--output` flags.
+```bash
+py -3 -m phase2_correlation.correlator
+```
+
+## Phase 3 - Safe Validation Engine:
+Deduplicates targets and dynamically executes safe Proof-of-Concept checks for correlated CVEs.
+```bash
+py -3 -m phase3_validation.main
+```
+
+## Phase 4 - Report Generation:
+Ingests the JSON artifacts from prior phases to render compliance-mapped Markdown and HTML reports.
+```bash
+py -3 -m phase4_reporting.renderer
+```
+
 ## The 5-Phase Pipeline
 | Phase | Status | Technical Implementation |
 | :--- | :--- | :--- |
