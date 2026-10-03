@@ -29,31 +29,32 @@ docker compose up --build -d
 ```
 
 ## 2. Master Orchestrator Execution
+To trigger the entire sequential pipeline (Phases 1 through 4) automatically:
 ```bash
 python run_pipeline.py --target 127.0.0.1
 ```
 
 # Modular Phase Execution (CLI)
 The pipeline features a decoupled architecture where each phase can be executed independently, reading from and writing to the central `data/` directory.
-## Phase 1 - Reconnaissance & Scope Guard: 
+## - Phase 1 - Reconnaissance & Scope Guard: 
 Discovers open ports and extracts service banners using Nmap, validating targets against authorized CIDRs.
 ```bash
 py -3 -m phase1_recon.main --target 127.0.0.1
 ```
 
-## Phase 2 - Vulnerability Correlation:
+## - Phase 2 - Vulnerability Correlation:
 Translates Phase 1 findings into CPE 2.3 syntax and queries the NIST NVD API. Custom inputs and outputs can be specified using `--file` and `--output` flags.
 ```bash
 py -3 -m phase2_correlation.correlator
 ```
 
-## Phase 3 - Safe Validation Engine:
+## - Phase 3 - Safe Validation Engine:
 Deduplicates targets and dynamically executes safe Proof-of-Concept checks for correlated CVEs.
 ```bash
 py -3 -m phase3_validation.main
 ```
 
-## Phase 4 - Report Generation:
+## - Phase 4 - Report Generation:
 Ingests the JSON artifacts from prior phases to render compliance-mapped Markdown and HTML reports.
 ```bash
 py -3 -m phase4_reporting.renderer
